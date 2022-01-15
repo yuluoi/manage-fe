@@ -1,0 +1,62 @@
+<template>
+  <div class="welcome">
+    <div class="content">
+      <div class="sub-title">欢迎体验</div>
+      <div class="title">蒸汽通用后台管理系统</div>
+      <div class="desc">Vue3.0+ElementPlus+Node+Mongo打造通用后台管理系统</div>
+    </div>
+    <div class="img"></div>
+  </div>
+</template>
+
+<script setup>
+import { defineProps, reactive } from 'vue'
+import { useRouter } from 'vue-router'
+
+defineProps({
+  msg: String
+})
+
+const state = reactive({ count: 0 })
+
+const router = useRouter()
+const goLogin = () => {
+  router.push('/login')
+}
+</script>
+
+<style lang="scss">
+.welcome {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  .content {
+    position: relative;
+    bottom: 40px;
+    .sub-title {
+      font-size: 30px;
+      line-height: 42px;
+      color: #333;
+    }
+    .title {
+      font-size: 40px;
+      line-height: 62px;
+      color: #409eff;
+    }
+    .desc {
+      text-align: right;
+      font-size: 14px;
+      color: #999;
+    }
+  }
+  .img {
+    width: 371px;
+    height: 438px;
+    background-image: url('./../assets/images/welcome.png');
+    margin-left: 105px;
+  }
+}
+</style>
